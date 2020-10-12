@@ -1,0 +1,1035 @@
+﻿{
+	"destination": "detailScreen",
+	"windowMinWidth": 800,
+	"windowMaxWidth": 32000,
+	"windowMinHeight": 540,
+	"windowMaxHeight": 32000,
+	"width": 1000,
+	"height": 900,
+	"menuBar": "Menu Bar #1",
+	"markerHeader": 15,
+	"markerBody": 200,
+	"markerBreak": 220,
+	"markerFooter": 240,
+	"events": [
+		"onLoad",
+		"onUnload",
+		"onPageChange"
+	],
+	"method": "method.4dm",
+	"pageFormat": {
+		"paperName": "A4",
+		"paperWidth": "842pt",
+		"paperHeight": "595pt"
+	},
+	"pages": [
+		{
+			"objects": {
+				"Tab Control": {
+					"type": "tab",
+					"top": 20,
+					"left": 20,
+					"width": 960,
+					"height": 860,
+					"sizingX": "grow",
+					"sizingY": "grow",
+					"dataSource": "_TabTitles",
+					"dataSourceTypeHint": "arrayText",
+					"action": "gotoPage",
+					"events": [
+						"onClick"
+					]
+				},
+				"TraceCheckbox": {
+					"type": "checkbox",
+					"text": "Trace",
+					"top": 850,
+					"left": 30,
+					"width": 80,
+					"height": 20,
+					"events": [
+						"onClick"
+					],
+					"dataSource": "btnTrace",
+					"sizingX": "fixed",
+					"sizingY": "fixed"
+				}
+			}
+		},
+		{
+			"objects": {
+				"information": {
+					"type": "input",
+					"top": 80,
+					"left": 80,
+					"width": 800,
+					"height": 480,
+					"sizingX": "fixed",
+					"sizingY": "fixed",
+					"dataSource": "_Descriptions{1}",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"styledText": true,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				}
+			}
+		},
+		{
+			"objects": {
+				"information2": {
+					"type": "input",
+					"top": 90,
+					"left": 60,
+					"width": 900,
+					"height": 230,
+					"sizingY": "fixed",
+					"dataSource": "_Descriptions{2}",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"styledText": true,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"List Box": {
+					"type": "listbox",
+					"left": 60,
+					"top": 360,
+					"width": 465,
+					"height": 101,
+					"events": [
+						"onLoad",
+						"onUnload"
+					],
+					"selectionMode": "none",
+					"listboxType": "collection",
+					"dataSource": "Form:C1466.invoices",
+					"focusable": false,
+					"rowHeight": "20px",
+					"headerHeight": "21px",
+					"scrollbarHorizontal": "hidden",
+					"sizingY": "fixed",
+					"columns": [
+						{
+							"header": {
+								"text": "Number",
+								"name": "Header1"
+							},
+							"name": "Column1",
+							"footer": {
+								"name": "Footer1"
+							},
+							"dataSource": "This:C1470.number",
+							"textAlign": "center",
+							"width": 80
+						},
+						{
+							"header": {
+								"name": "Header2",
+								"text": "Customer"
+							},
+							"name": "Column2",
+							"dataSource": "This:C1470.customer",
+							"footer": {
+								"name": "Footer2"
+							},
+							"width": 250
+						},
+						{
+							"header": {
+								"name": "Header3",
+								"text": "Status"
+							},
+							"name": "Column3",
+							"dataSource": "This:C1470.status",
+							"footer": {
+								"name": "Footer3"
+							},
+							"textAlign": "center",
+							"width": 150
+						}
+					]
+				},
+				"Button2": {
+					"type": "button",
+					"text": "Send emails",
+					"top": 360,
+					"left": 540,
+					"width": 100,
+					"height": 20,
+					"events": [
+						"onClick"
+					],
+					"focusable": false,
+					"method": "ObjectMethods/Button2.4dm",
+					"sizingY": "fixed"
+				},
+				"Input": {
+					"type": "input",
+					"left": 540,
+					"top": 400,
+					"width": 430,
+					"height": 300,
+					"enterable": false,
+					"hideFocusRing": false,
+					"fill": "transparent",
+					"dataSource": "_TabLineCode{1}",
+					"styledText": true,
+					"sizingY": "fixed"
+				},
+				"Text": {
+					"type": "text",
+					"text": "Acknowledgment emails content",
+					"top": 510,
+					"left": 60,
+					"width": 250,
+					"height": 20,
+					"fontWeight": "bold",
+					"sizingY": "fixed"
+				},
+				"Text1": {
+					"type": "text",
+					"text": "Reminders emails content",
+					"top": 700,
+					"left": 60,
+					"width": 200,
+					"height": 20,
+					"fontWeight": "bold",
+					"sizingY": "fixed"
+				},
+				"Button3": {
+					"type": "button",
+					"text": "View sendMails method",
+					"top": 720,
+					"left": 540,
+					"width": 250,
+					"height": 20,
+					"events": [
+						"onClick"
+					],
+					"method": "ObjectMethods/Button3.4dm",
+					"focusable": false,
+					"fontFamily": "Courier",
+					"fontSize": 13,
+					"sizingY": "fixed"
+				},
+				"Text2": {
+					"type": "text",
+					"text": "Invoices",
+					"top": 340,
+					"left": 60,
+					"width": 204,
+					"height": 20,
+					"fontWeight": "bold",
+					"sizingY": "fixed"
+				},
+				"Input7": {
+					"type": "input",
+					"left": 60,
+					"top": 640,
+					"width": 180,
+					"height": 20,
+					"enterable": false,
+					"hideFocusRing": false,
+					"fill": "transparent",
+					"dataSource": "_TabLineCode{3}",
+					"styledText": true,
+					"borderStyle": "none",
+					"textAlign": "left",
+					"sizingY": "fixed"
+				},
+				"Input8": {
+					"type": "input",
+					"left": 1544,
+					"top": 121,
+					"width": 180,
+					"height": 20,
+					"enterable": false,
+					"hideFocusRing": false,
+					"fill": "transparent",
+					"dataSource": "_TabLineCode{3}",
+					"styledText": true,
+					"sizingY": "fixed"
+				},
+				"Input9": {
+					"type": "input",
+					"left": 60,
+					"top": 830,
+					"width": 180,
+					"height": 20,
+					"enterable": false,
+					"hideFocusRing": false,
+					"fill": "transparent",
+					"dataSource": "_TabLineCode{4}",
+					"styledText": true,
+					"borderStyle": "none",
+					"textAlign": "left",
+					"sizingY": "fixed"
+				},
+				"List Box2": {
+					"type": "listbox",
+					"left": 60,
+					"top": 530,
+					"width": 415,
+					"height": 101,
+					"events": [
+						"onLoad",
+						"onUnload"
+					],
+					"selectionMode": "none",
+					"listboxType": "collection",
+					"dataSource": "Form:C1466.acknowledge",
+					"focusable": false,
+					"rowHeight": "20px",
+					"headerHeight": "21px",
+					"scrollbarHorizontal": "hidden",
+					"sizingY": "fixed",
+					"columns": [
+						{
+							"header": {
+								"text": "To",
+								"name": "Header6"
+							},
+							"name": "Column6",
+							"footer": {
+								"name": "Footer6"
+							},
+							"dataSource": "This:C1470.to",
+							"textAlign": "left",
+							"width": 200
+						},
+						{
+							"header": {
+								"name": "Header7",
+								"text": "Content"
+							},
+							"name": "Column7",
+							"dataSource": "This:C1470.content",
+							"footer": {
+								"name": "Footer7"
+							},
+							"width": 200
+						}
+					]
+				},
+				"List Box3": {
+					"type": "listbox",
+					"left": 406,
+					"top": 1031,
+					"width": 315,
+					"height": 101,
+					"events": [
+						"onLoad",
+						"onUnload"
+					],
+					"selectionMode": "none",
+					"listboxType": "collection",
+					"dataSource": "Form:C1466.acknowlegment",
+					"focusable": false,
+					"rowHeight": "20px",
+					"headerHeight": "21px",
+					"scrollbarHorizontal": "hidden",
+					"sizingY": "fixed",
+					"columns": [
+						{
+							"header": {
+								"text": "To",
+								"name": "Header8"
+							},
+							"name": "Column8",
+							"footer": {
+								"name": "Footer8"
+							},
+							"dataSource": "This:C1470.to",
+							"textAlign": "center",
+							"width": 150
+						},
+						{
+							"header": {
+								"name": "Header9",
+								"text": "Content"
+							},
+							"name": "Column9",
+							"dataSource": "This:C1470.content",
+							"footer": {
+								"name": "Footer9"
+							},
+							"width": 150
+						}
+					]
+				},
+				"List Box4": {
+					"type": "listbox",
+					"left": 60,
+					"top": 720,
+					"width": 415,
+					"height": 101,
+					"events": [
+						"onLoad",
+						"onUnload"
+					],
+					"selectionMode": "none",
+					"listboxType": "collection",
+					"dataSource": "Form:C1466.reminder",
+					"focusable": false,
+					"rowHeight": "20px",
+					"headerHeight": "21px",
+					"scrollbarHorizontal": "hidden",
+					"sizingY": "fixed",
+					"columns": [
+						{
+							"header": {
+								"text": "To",
+								"name": "Header10"
+							},
+							"name": "Column10",
+							"footer": {
+								"name": "Footer10"
+							},
+							"dataSource": "This:C1470.to",
+							"textAlign": "left",
+							"width": 200
+						},
+						{
+							"header": {
+								"name": "Header11",
+								"text": "Content"
+							},
+							"name": "Column11",
+							"dataSource": "This:C1470.content",
+							"footer": {
+								"name": "Footer11"
+							},
+							"width": 200
+						}
+					]
+				}
+			}
+		},
+		{
+			"objects": {
+				"Input11": {
+					"type": "input",
+					"left": 420,
+					"top": 420,
+					"width": 250,
+					"height": 20,
+					"enterable": false,
+					"hideFocusRing": false,
+					"fill": "transparent",
+					"dataSource": "_TabLineCode{6}",
+					"styledText": true,
+					"borderStyle": "none",
+					"focusable": false
+				},
+				"Text6": {
+					"type": "text",
+					"text": "Price:",
+					"top": 390,
+					"left": 190,
+					"width": 100,
+					"height": 20,
+					"textAlign": "right"
+				},
+				"information1": {
+					"type": "input",
+					"top": 90,
+					"left": 60,
+					"width": 900,
+					"height": 250,
+					"sizingX": "fixed",
+					"sizingY": "fixed",
+					"dataSource": "_Descriptions{3}",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"styledText": true,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"List Box1": {
+					"type": "listbox",
+					"left": 640,
+					"top": 370,
+					"width": 315,
+					"height": 141,
+					"events": [
+						"onLoad",
+						"onUnload"
+					],
+					"selectionMode": "none",
+					"listboxType": "collection",
+					"dataSource": "Form:C1466.products",
+					"focusable": false,
+					"rowHeight": "20px",
+					"headerHeight": "21px",
+					"scrollbarHorizontal": "hidden",
+					"columns": [
+						{
+							"header": {
+								"text": "Name",
+								"name": "Header4"
+							},
+							"name": "Column4",
+							"footer": {
+								"name": "Footer4"
+							},
+							"dataSource": "This:C1470.name",
+							"width": 200
+						},
+						{
+							"header": {
+								"name": "Header5",
+								"text": "Price"
+							},
+							"name": "Column5",
+							"dataSource": "This:C1470.price",
+							"footer": {
+								"name": "Footer5"
+							},
+							"width": 100
+						}
+					]
+				},
+				"Input3": {
+					"type": "input",
+					"left": 90,
+					"top": 390,
+					"width": 150,
+					"height": 20,
+					"dataSource": "Form:C1466.product.name"
+				},
+				"Input4": {
+					"type": "input",
+					"left": 300,
+					"top": 390,
+					"width": 80,
+					"height": 20,
+					"dataSource": "Form:C1466.product.price",
+					"dataSourceTypeHint": "number"
+				},
+				"Button": {
+					"type": "button",
+					"text": "Save",
+					"top": 390,
+					"left": 420,
+					"width": 100,
+					"height": 20,
+					"events": [
+						"onClick"
+					],
+					"method": "ObjectMethods/Button.4dm",
+					"focusable": false
+				},
+				"SendCatalogButton": {
+					"type": "button",
+					"text": "Send catalog",
+					"top": 460,
+					"left": 90,
+					"width": 140,
+					"height": 20,
+					"events": [
+						"onClick"
+					],
+					"method": "ObjectMethods/SendCatalogButton.4dm",
+					"focusable": false
+				},
+				"ErrorNotShared": {
+					"type": "input",
+					"left": 520,
+					"top": 580,
+					"width": 450,
+					"height": 20,
+					"enterable": false,
+					"hideFocusRing": false,
+					"fill": "transparent",
+					"dataSource": "Form:C1466.error",
+					"focusable": false,
+					"fontWeight": "bold",
+					"borderStyle": "none",
+					"stroke": "#ff0000",
+					"textAlign": "left"
+				},
+				"Check Box": {
+					"type": "checkbox",
+					"text": "Copy products as shared",
+					"top": 460,
+					"left": 240,
+					"width": 200,
+					"height": 20,
+					"events": [
+						"onClick"
+					],
+					"dataSourceTypeHint": "boolean",
+					"dataSource": "Form:C1466.shared",
+					"focusable": false
+				},
+				"Text3": {
+					"type": "text",
+					"text": "Products",
+					"top": 350,
+					"left": 640,
+					"width": 200,
+					"height": 20,
+					"fontWeight": "bold"
+				},
+				"Text4": {
+					"type": "text",
+					"text": "Enter product information",
+					"top": 360,
+					"left": 90,
+					"width": 220,
+					"height": 20,
+					"fontWeight": "bold"
+				},
+				"Text5": {
+					"type": "text",
+					"text": "Name:",
+					"top": 390,
+					"left": -20,
+					"width": 100,
+					"height": 20,
+					"textAlign": "right"
+				},
+				"Input10": {
+					"type": "input",
+					"left": 640,
+					"top": 520,
+					"width": 300,
+					"height": 20,
+					"enterable": false,
+					"hideFocusRing": false,
+					"fill": "transparent",
+					"dataSource": "_TabLineCode{5}",
+					"styledText": true,
+					"borderStyle": "none"
+				},
+				"Input12": {
+					"type": "input",
+					"left": 430,
+					"top": 460,
+					"width": 100,
+					"height": 20,
+					"enterable": false,
+					"hideFocusRing": false,
+					"fill": "transparent",
+					"dataSource": "_TabLineCode{7}",
+					"styledText": true,
+					"borderStyle": "none",
+					"textAlign": "left"
+				},
+				"CatalogText": {
+					"type": "text",
+					"text": "Created catalog",
+					"top": 580,
+					"left": 640,
+					"width": 210,
+					"height": 20,
+					"fontWeight": "bold"
+				},
+				"Input13": {
+					"type": "input",
+					"left": 90,
+					"top": 500,
+					"width": 400,
+					"height": 340,
+					"enterable": false,
+					"hideFocusRing": false,
+					"fill": "transparent",
+					"dataSource": "_TabLineCode{8}",
+					"styledText": true,
+					"borderStyle": "dotted"
+				},
+				"CatalogContent": {
+					"type": "listbox",
+					"left": 640,
+					"top": 600,
+					"width": 315,
+					"height": 141,
+					"events": [
+						"onLoad",
+						"onUnload"
+					],
+					"selectionMode": "none",
+					"listboxType": "collection",
+					"dataSource": "Form:C1466.catalog",
+					"focusable": false,
+					"rowHeight": "20px",
+					"headerHeight": "21px",
+					"scrollbarHorizontal": "hidden",
+					"columns": [
+						{
+							"header": {
+								"text": "Name",
+								"name": "Header12"
+							},
+							"name": "Column12",
+							"footer": {
+								"name": "Footer12"
+							},
+							"dataSource": "This:C1470.name",
+							"width": 200
+						},
+						{
+							"header": {
+								"name": "Header13",
+								"text": "Price"
+							},
+							"name": "Column13",
+							"dataSource": "This:C1470.price",
+							"footer": {
+								"name": "Footer13"
+							},
+							"width": 100
+						}
+					]
+				},
+				"CatalogCaption": {
+					"type": "input",
+					"left": 640,
+					"top": 750,
+					"width": 200,
+					"height": 20,
+					"enterable": false,
+					"hideFocusRing": false,
+					"fill": "transparent",
+					"dataSource": "_TabLineCode{10}",
+					"styledText": true,
+					"borderStyle": "none"
+				},
+				"Button4": {
+					"type": "button",
+					"text": "View sendCatalog method",
+					"top": 850,
+					"left": 210,
+					"width": 280,
+					"height": 20,
+					"events": [
+						"onClick"
+					],
+					"method": "ObjectMethods/Button4.4dm",
+					"focusable": false,
+					"fontFamily": "Courier",
+					"fontSize": 13
+				},
+				"CatalogArrow": {
+					"type": "picture",
+					"top": 650,
+					"left": 540,
+					"width": 64,
+					"height": 32,
+					"picture": "Images/Static Picture2.tif",
+					"pictureFormat": "scaled"
+				}
+			}
+		},
+		{
+			"objects": {
+				"Input1": {
+					"type": "input",
+					"left": 400,
+					"top": 420,
+					"width": 250,
+					"height": 20,
+					"enterable": false,
+					"hideFocusRing": false,
+					"fill": "transparent",
+					"dataSource": "_TabLineCode{6}",
+					"styledText": true,
+					"borderStyle": "none",
+					"focusable": false
+				},
+				"Text7": {
+					"type": "text",
+					"text": "Price:",
+					"top": 390,
+					"left": 190,
+					"width": 100,
+					"height": 20,
+					"textAlign": "right"
+				},
+				"information3": {
+					"type": "input",
+					"top": 90,
+					"left": 60,
+					"width": 900,
+					"height": 240,
+					"sizingX": "fixed",
+					"sizingY": "fixed",
+					"dataSource": "_Descriptions{4}",
+					"focusable": false,
+					"fill": "transparent",
+					"borderStyle": "none",
+					"enterable": false,
+					"styledText": true,
+					"contextMenu": "none",
+					"dragging": "none",
+					"dropping": "custom",
+					"events": [
+						"onDataChange"
+					]
+				},
+				"List Box5": {
+					"type": "listbox",
+					"left": 620,
+					"top": 370,
+					"width": 315,
+					"height": 141,
+					"events": [
+						"onLoad",
+						"onUnload"
+					],
+					"selectionMode": "none",
+					"listboxType": "collection",
+					"dataSource": "Form:C1466.products",
+					"focusable": false,
+					"rowHeight": "20px",
+					"headerHeight": "21px",
+					"scrollbarHorizontal": "hidden",
+					"columns": [
+						{
+							"header": {
+								"text": "Name",
+								"name": "Header14"
+							},
+							"name": "Column14",
+							"footer": {
+								"name": "Footer14"
+							},
+							"dataSource": "This:C1470.name",
+							"width": 200
+						},
+						{
+							"header": {
+								"name": "Header15",
+								"text": "Price"
+							},
+							"name": "Column15",
+							"dataSource": "This:C1470.price",
+							"footer": {
+								"name": "Footer15"
+							},
+							"width": 100
+						}
+					]
+				},
+				"Input2": {
+					"type": "input",
+					"left": 90,
+					"top": 390,
+					"width": 150,
+					"height": 20,
+					"dataSource": "Form:C1466.product.name"
+				},
+				"Input5": {
+					"type": "input",
+					"left": 300,
+					"top": 390,
+					"width": 80,
+					"height": 20,
+					"dataSource": "Form:C1466.product.price",
+					"dataSourceTypeHint": "number"
+				},
+				"Button1": {
+					"type": "button",
+					"text": "Save",
+					"top": 390,
+					"left": 400,
+					"width": 100,
+					"height": 20,
+					"events": [
+						"onClick"
+					],
+					"method": "ObjectMethods/Button1.4dm",
+					"focusable": false
+				},
+				"SendCatalogButton1": {
+					"type": "button",
+					"text": "Send catalog",
+					"top": 460,
+					"left": 90,
+					"width": 140,
+					"height": 20,
+					"events": [
+						"onClick"
+					],
+					"method": "ObjectMethods/SendCatalogButton1.4dm",
+					"focusable": false
+				},
+				"Text8": {
+					"type": "text",
+					"text": "Products",
+					"top": 350,
+					"left": 620,
+					"width": 200,
+					"height": 20,
+					"fontWeight": "bold"
+				},
+				"Text9": {
+					"type": "text",
+					"text": "Enter product information",
+					"top": 360,
+					"left": 90,
+					"width": 220,
+					"height": 20,
+					"fontWeight": "bold"
+				},
+				"Text10": {
+					"type": "text",
+					"text": "Name:",
+					"top": 390,
+					"left": -20,
+					"width": 100,
+					"height": 20,
+					"textAlign": "right"
+				},
+				"Input6": {
+					"type": "input",
+					"left": 620,
+					"top": 520,
+					"width": 350,
+					"height": 70,
+					"enterable": false,
+					"hideFocusRing": false,
+					"fill": "transparent",
+					"dataSource": "_TabLineCode{13}",
+					"styledText": true,
+					"borderStyle": "none"
+				},
+				"CatalogText1": {
+					"type": "text",
+					"text": "Created catalog",
+					"top": 620,
+					"left": 620,
+					"width": 210,
+					"height": 20,
+					"fontWeight": "bold"
+				},
+				"Input15": {
+					"type": "input",
+					"left": 90,
+					"top": 500,
+					"width": 480,
+					"height": 300,
+					"enterable": false,
+					"hideFocusRing": false,
+					"fill": "transparent",
+					"dataSource": "_TabLineCode{11}",
+					"styledText": true,
+					"borderStyle": "dotted"
+				},
+				"CatalogContent1": {
+					"type": "listbox",
+					"left": 620,
+					"top": 640,
+					"width": 315,
+					"height": 141,
+					"events": [
+						"onLoad",
+						"onUnload"
+					],
+					"selectionMode": "none",
+					"listboxType": "collection",
+					"dataSource": "Form:C1466.catalog",
+					"focusable": false,
+					"rowHeight": "20px",
+					"headerHeight": "21px",
+					"scrollbarHorizontal": "hidden",
+					"columns": [
+						{
+							"header": {
+								"text": "Name",
+								"name": "Header16"
+							},
+							"name": "Column16",
+							"footer": {
+								"name": "Footer16"
+							},
+							"dataSource": "This:C1470.name",
+							"width": 200
+						},
+						{
+							"header": {
+								"name": "Header17",
+								"text": "Price"
+							},
+							"name": "Column17",
+							"dataSource": "This:C1470.price",
+							"footer": {
+								"name": "Footer17"
+							},
+							"width": 100
+						}
+					]
+				},
+				"CatalogCaption1": {
+					"type": "input",
+					"left": 620,
+					"top": 790,
+					"width": 200,
+					"height": 20,
+					"enterable": false,
+					"hideFocusRing": false,
+					"fill": "transparent",
+					"dataSource": "_TabLineCode{10}",
+					"styledText": true,
+					"borderStyle": "none"
+				},
+				"Button5": {
+					"type": "button",
+					"text": "View sendCatalog2 method",
+					"top": 820,
+					"left": 290,
+					"width": 280,
+					"height": 20,
+					"events": [
+						"onClick"
+					],
+					"method": "ObjectMethods/Button5.4dm",
+					"focusable": false,
+					"fontFamily": "Courier",
+					"fontSize": 13
+				},
+				"CatalogArrow1": {
+					"type": "picture",
+					"top": 670,
+					"left": 570,
+					"width": 50,
+					"height": 32,
+					"picture": "Images/Static Picture2.tif",
+					"pictureFormat": "scaled"
+				}
+			}
+		}
+	],
+	"geometryStamp": 2357,
+	"$4d": {
+		"version": "1",
+		"kind": "form"
+	},
+	"editor": {
+		"activeView": "View 1",
+		"defaultView": "View 1",
+		"views": {
+			"View 1": {}
+		}
+	},
+	"windowSizingX": "fixed"
+}
